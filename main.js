@@ -42,12 +42,10 @@ for (const queen of database.queens) {
 
 // interate the queen objects to show tribute for each one
 for (const queen of database.queens) {
-    for (const tribute of database.tributeChest) {
-        if (tribute.queenId === queen.id) {
-            
+    const tribute = database.tributeChest.find(tribute => tribute.queenId === queen.id)
+        if (tribute) {
             console.log(`${queen.name} has tribute ${tribute.description}`)
         }
-    }
 }
 
 
